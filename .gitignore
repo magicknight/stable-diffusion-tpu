@@ -59,3 +59,6 @@ condaenv.*.requirements.txt
 /log/**/*.png
 /log/log.csv
 /flagged/*
+
+# models
+/models/*
