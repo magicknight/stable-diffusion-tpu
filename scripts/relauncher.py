@@ -1,4 +1,14 @@
-import os, time
+'''
+Author: Zhihua Liang
+Date: 2022-09-06 10:46:10
+LastEditTime: 2022-09-07 13:39:20
+LastEditors: Zhihua Liang
+FilePath: /Linux-StableDiffusion-Script-tpu/home/zhihua/framework/stable_diffusion/stable-diffusion-tpu/scripts/relauncher.py
+Description:
+All rights reserved
+'''
+import os
+import time
 
 # USER CHANGABLE ARGUMENTS
 
@@ -24,9 +34,6 @@ share = False
 additional_arguments = ""
 
 
-
-
-
 # BEGIN RELAUNCHER PYTHON CODE
 
 common_arguments = ""
@@ -49,16 +56,16 @@ n = 0
 while True:
     if n == 0:
         print('Relauncher: Launching...')
-        os.system(f"python scripts/webui.py {common_arguments} {inbrowser_argument} {additional_arguments}")
-        
+        os.system(f"python3 scripts/webui.py {common_arguments} {inbrowser_argument} {additional_arguments}")
+
     else:
         print(f'\tRelaunch count: {n}')
         print('Relauncher: Launching...')
-        os.system(f"python scripts/webui.py {common_arguments} {additional_arguments}")
-    
+        os.system(f"python3 scripts/webui.py {common_arguments} {additional_arguments}")
+
     n += 1
     if n > 100:
-        print ('Too many relaunch attempts. Aborting...')
+        print('Too many relaunch attempts. Aborting...')
         break
     print('Relauncher: Process is ending. Relaunching in 1s...')
     time.sleep(1)
